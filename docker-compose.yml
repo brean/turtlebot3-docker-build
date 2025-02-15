@@ -1,0 +1,10 @@
+services:
+  turtlebot3:
+    # publish robot basics: description and state publisher for our 
+    # SAMLER-KI robot, will call samler_bringup. 
+    # Very close to the real robot
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+      args:
+        ROS_DISTRO: jazzy
