@@ -18,4 +18,4 @@ COPY ./turtlebot3 /home/ubuntu/colcon_ws/src/turtlebot3
 
 WORKDIR /home/ubuntu/colcon_ws
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh\
-    && colcon build
+    && colcon build --packages-ignore  dynamixel_sdk_examples
