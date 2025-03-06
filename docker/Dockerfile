@@ -48,7 +48,7 @@ RUN for dir in turtlebot3_description \
     turtlebot3_navigation2 \
     turtlebot3; do \
       . /opt/ros/${ROS_DISTRO}/setup.sh\
-      && cd src/turtlebot3/$dir \
+      && cd /home/ubuntu/colcon_ws/src/turtlebot3/$dir \
       && bloom-generate rosdebian \
       && fakeroot debian/rules binary; \
     done
