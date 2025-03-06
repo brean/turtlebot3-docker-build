@@ -20,5 +20,4 @@ fi
 docker compose build turtlebot3
 docker compose up -d turtlebot3
 docker compose cp turtlebot3:/deb/ .
-# docker compose cp turtlebot3:/home/ubuntu/colcon_ws/src/ deb_src
 docker compose down

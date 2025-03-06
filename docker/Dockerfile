@@ -56,8 +56,3 @@ RUN for dir in turtlebot3_description \
 RUN mkdir /deb \
   && mv /home/ubuntu/colcon_ws/src/*.deb /deb/ \
   && mv /home/ubuntu/colcon_ws/src/*.ddeb /deb/
-
-# COPY ./turtlebot3 /home/ubuntu/colcon_ws/src/turtlebot3
-# RUN . /opt/ros/${ROS_DISTRO}/setup.sh\
-#     && colcon build --packages-ignore dynamixel_sdk_examples
-
