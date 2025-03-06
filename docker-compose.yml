@@ -1,9 +1,12 @@
 services:
   turtlebot3:
+    platform: "linux/arm64"
     # publish robot basics: description and state publisher for our 
     # SAMLER-KI robot, will call samler_bringup. 
     # Very close to the real robot
     build:
+      platforms:
+        - "linux/arm64"
       context: ./
       dockerfile: ./docker/Dockerfile
       args:
