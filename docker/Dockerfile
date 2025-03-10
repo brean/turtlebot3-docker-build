@@ -28,6 +28,8 @@ RUN apt-get update \
     ros-${ROS_DISTRO}-turtlebot3-msgs \
     && rm -rf /var/lib/apt/lists/*
 
+ENV DEB_BUILD_OPTIONS="parallel=16"
+
 RUN mkdir -p /home/ubuntu/colcon_ws/src
 WORKDIR /home/ubuntu/colcon_ws
 
@@ -37,7 +39,7 @@ COPY ./ld08_driver /home/ubuntu/colcon_ws/src/ld08_driver
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh\
     && cd src/ld08_driver \
     && bloom-generate rosdebian \
-    && fakeroot debian/rules binary
+    && fakeroot debian/rules "binary --parallel"
 
 # build turtlebot3
 COPY ./turtlebot3/ /home/ubuntu/colcon_ws/src/turtlebot3
@@ -45,28 +47,28 @@ COPY ./turtlebot3/ /home/ubuntu/colcon_ws/src/turtlebot3
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3_description && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3-description*.deb
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3_node && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3-node*.deb
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3_example && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3-example*.deb
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3_teleop && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3-teleop*.deb
@@ -80,28 +82,28 @@ RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3_bringup && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3-bringup*.deb
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3_cartographer && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3-cartographer*.deb
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3_navigation2 && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3-navigation2*.deb
 
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh && \
   cd /home/ubuntu/colcon_ws/src/turtlebot3/turtlebot3 && \
   bloom-generate rosdebian && \
-  fakeroot debian/rules binary
+  fakeroot debian/rules "binary --parallel"
 
 RUN dpkg -i ./src/turtlebot3/ros-${ROS_DISTRO}-turtlebot3*.deb
 

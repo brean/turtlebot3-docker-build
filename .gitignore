@@ -1,1 +1,3 @@
-deb/*.deb
+deb*/*.deb
+deb*/*.ddeb
+deb*/*.zip
