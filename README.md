@@ -1,4 +1,7 @@
-# Docker Environment to create jazzy debian files from the turtlebot repos
+# Docker environment to build the turtlebot3-stack
+This repository provides a docker environment to build ROS 2 Jazzy as debian packages for arm64 to run Ubuntu 24.04 on the raspberry pi 3+ of the turtlebot 3.
+
+These are unofficial packages, ros 2 jazzy is not supported by ROBOTIS.
 
 ## Prerequisites
 Docker needs to be installed, only tested with docker-ce
