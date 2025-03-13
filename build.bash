@@ -19,6 +19,7 @@ else
 fi
 docker compose build turtlebot3-arm64 turtlebot3-x64 --progress=plain
 docker compose up -d turtlebot3-arm64 turtlebot3-x64
-# docker compose cp turtlebot3-arm64:/deb/ ./deb-arm64
+docker compose cp turtlebot3-arm64:/deb/ ./deb-arm64
 docker compose cp turtlebot3-x64:/deb/ ./deb-x64
 docker compose down
+# TODO: zip to create files?
