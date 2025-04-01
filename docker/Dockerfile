@@ -10,6 +10,7 @@ RUN apt-get update \
     ros-${ROS_DISTRO}-rviz2 \
     ros-${ROS_DISTRO}-cartographer-ros \
     ros-${ROS_DISTRO}-nav2-bringup \
+    ros-${ROS_DISTRO}-tf-transformations \
     libudev-dev \
     python3-bloom \
     python3-rosdep \
