@@ -1,14 +1,14 @@
 turtlebot3_bringup:
-  ubuntu: [ros-jazzy-turtlebot3-bringup]
+  ubuntu: [ros-lyrical-turtlebot3-bringup]
 turtlebot3_cartographer:
-  ubuntu: [ros-jazzy-turtlebot3-cartographer]
+  ubuntu: [ros-lyrical-turtlebot3-cartographer]
 turtlebot3_description:
-  ubuntu: [ros-jazzy-turtlebot3-description]
+  ubuntu: [ros-lyrical-turtlebot3-description]
 turtlebot3_example:
-  ubuntu: [ros-jazzy-turtlebot3-example]
+  ubuntu: [ros-lyrical-turtlebot3-example]
 turtlebot3_navigation2:
-  ubuntu: [ros-jazzy-turtlebot3-navigation2]
+  ubuntu: [ros-lyrical-turtlebot3-navigation2]
 turtlebot3_node:
-  ubuntu: [ros-jazzy-turtlebot3-node]
+  ubuntu: [ros-lyrical-turtlebot3-node]
 turtlebot3_teleop:
-  ubuntu: [ros-jazzy-turtlebot3-teleop]
+  ubuntu: [ros-lyrical-turtlebot3-teleop]
